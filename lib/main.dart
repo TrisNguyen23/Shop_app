@@ -5,6 +5,7 @@ import './providers/cart_provider.dart';
 import './screens/home_screen.dart';
 import './screens/settings_screen.dart';
 import './screens/live_screen.dart';
+import './screens/cart_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (ctx) => CartProvider()),
       ],
       child: MaterialApp(
-        title: 'Shopping App',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -27,6 +27,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: BottomNavBar(),
+        routes: {
+          '/cart': (ctx) => CartScreen(),
+        },
       ),
     );
   }

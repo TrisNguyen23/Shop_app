@@ -12,15 +12,14 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping App'),
         actions: [
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
-              Navigator.of(context).pushNamed(CartScreen.routeName);
+              Navigator.of(context)
+                  .pushNamed(CartScreen.routeName); // Navigate to CartScreen
             },
           ),
-          // Removed the settings icon
         ],
       ),
       body: GridView.builder(
